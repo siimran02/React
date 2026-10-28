@@ -2,7 +2,8 @@ import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import App from './App.jsx'
-const ReactElement = {
+
+const reactElement = {
     type: 'a',
     props: {
         href:"https://google.com",
@@ -10,15 +11,29 @@ const ReactElement = {
     },
     children: 'Click me to visit google'
 }
+function MyApp(){
+    return(
+        <div>
+            <h1>
+                Custom React App
+            </h1>
+        </div>
+    )
+}
 
 const AnotherElement = (
-    <a href="http://google.com" target='_blank'>visit google</a>
+    <a href="http://google.com" target="_blank">click here to visit google</a>
 )
-const areactElement = React.createElement(
+
+const areactElement =  React.createElement(
     'a',
-    {href:'http://google.com',target:"blank"},
-    'click to visit google'
+   {
+        href:"https://google.com",
+        target:'_blank'
+    },
+   'Click me to visit google'
 )
+   
 createRoot(document.getElementById('root')).render(
-    <App/> 
+     AnotherElement
 )
